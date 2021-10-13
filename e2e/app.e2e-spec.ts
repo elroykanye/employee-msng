@@ -1,6 +1,6 @@
 import { AppDashboard } from './app.po';
 
-describe('CoreUI template', () => {
+describe('Axxentis', () => {
   let page: AppDashboard;
   const sleep = 300;
 
@@ -15,12 +15,12 @@ describe('CoreUI template', () => {
   //   page.navigateTo();
   // });
 
-  it('should display CoreUI Dashboard', async () => {
+  it('should display Axxentis Dashboard', async () => {
     expect(await page.getParagraphText()).toEqual('Traffic');
   });
 
-  it('should display footer containing creativeLabs', async () => {
-    expect(await page.getFooterText()).toContain('creativeLabs');
+  it('should display footer containing employee management software', async () => {
+    expect(await page.getFooterText()).toContain('employee management software');
   });
 
   it('should toggle `sidebar-minimized` body.class on `sidebar-minimizer` click', () => {
