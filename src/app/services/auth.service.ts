@@ -3,7 +3,7 @@ import {Observable} from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {LoginRequest, RegisterRequest} from '../models/requests/auth.request';
 
-const AUTH_API = 'http://localhost:8080/api/auth';
+const AUTH_API = 'http://localhost:8080/api/auth/';
 const SIGN_IN_ENDPOINT = 'signin';
 const SIGN_UP_ENDPOINT = 'signup';
 
