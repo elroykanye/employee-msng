@@ -38,6 +38,10 @@ import {
 // Import routing module
 import { AppRoutingModule } from './app.routing';
 
+// added
+import { HttpClientModule } from '@angular/common/http';
+import { authInterceptorProviders } from './helpers/auth.interceptor';
+
 // Import 3rd party components
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
