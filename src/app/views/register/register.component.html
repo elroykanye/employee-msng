@@ -5,36 +5,117 @@
         <div class="col-md-6 mx-auto">
           <div class="card mx-4">
             <div class="card-body p-4">
-              <form>
+              <form
+                *ngIf="!isSuccessful"
+                #registerForm="ngForm"
+                (ngSubmit)="registerForm.form.valid && onSubmit()"
+                novalidate
+                name="form">
                 <h1>Register</h1>
                 <p class="text-muted">Create your account</p>
+
+                <!-- username field -->
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-user"></i></span>
                   </div>
                   <input type="text" class="form-control" placeholder="Username" autocomplete="username" required>
                 </div>
+
+                <!-- email field -->
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text">@</span>
                   </div>
-                  <input type="text" class="form-control" placeholder="Email" autocomplete="email" required>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Email"
+                    autocomplete="email"
+                    minlength="4"
+                    maxlength="64"
+                    [(ngModel)]="registerRequest.email"
+                    #email="ngModel"
+                    required>
+                  <!-- error message -->
+                  <div class="alert-danger" *ngIf="email.errors && registerForm.submitted">
+                    <div *ngIf="email.errors.required">
+                      Email is required
+                    </div>
+                    <div *ngIf="email.errors.minlength">
+                      Email must be at least 4 characters
+                    </div>
+                    <div *ngIf="email.errors.maxlength">
+                      Email must be at most 64 characters
+                    </div>
+                    <div *ngIf="email.errors.email">
+                      Email must be valid
+                    </div>
+                  </div>
                 </div>
+
+                <!-- password field -->
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-lock"></i></span>
                   </div>
-                  <input type="password" class="form-control" placeholder="Password" autocomplete="new-password" required>
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Password"
+                    autocomplete="new-password"
+                    [(ngModel)]="registerRequest.password"
+                    #password="ngModel"
+                    #pass
+                    minlength="6"
+                    required>
+                  <div class="alert-danger" *ngIf="password.errors && registerForm.submitted">
+                    <div *ngIf="password.errors.required">
+                      Password is required
+                    </div>
+                    <div *ngIf="password.errors.minlength">
+                      Password must be at least 6 characters
+                    </div>
+                  </div>
                 </div>
+
+                <!-- repeat password field -->
                 <div class="input-group mb-4">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-lock"></i></span>
                   </div>
-                  <input type="password" class="form-control" placeholder="Repeat password" autocomplete="new-password" required>
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Repeat password"
+                    autocomplete="new-password"
+                    #repeatPass
+                    required>
+                  <div class="alert-danger" *ngIf="repeatPasswordValid(pass, repeatPass)">
+                    Password does not match
+                  </div>
                 </div>
-                <button type="button" class="btn btn-block btn-success">Create Account</button>
+
+                <!-- register button -->
+                <div class="form-group">
+                  <button type="button" class="btn btn-block btn-success">Create Account</button>
+                </div>
+
+                <!-- register failed message -->
+                <div class="alert alert-warning" *ngIf="registerForm.submitted && isSignUpFailed">
+                  Sign up failed!
+                  <br>
+                  {{ errorMessage }}
+                </div>
+
               </form>
+
+              <!-- register successful message -->
+              <div class="alert alert-success" *ngIf="isSuccessful">
+                Registeration was successful
+              </div>
             </div>
+
             <div class="card-footer p-4">
               <div class="row">
                 <div class="col-6">
