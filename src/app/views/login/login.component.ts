@@ -18,7 +18,9 @@ export class LoginComponent implements  OnInit {
   errorMessage: string = '';
   roles: string[] = [];
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    // private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
   }

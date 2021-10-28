@@ -45,6 +45,7 @@ import { authInterceptorProviders } from './helpers/auth.interceptor';
 // Import 3rd party components
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import { EmployeeModule} from './views/base/employee.module';
 import { ChartsModule } from 'ng2-charts';
 import {FormsModule} from '@angular/forms';
 

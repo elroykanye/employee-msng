@@ -2,37 +2,90 @@ import { INavData } from '@coreui/angular';
 
 export const navItems: INavData[] = [
   {
+    title: true,
+    name: 'Main'
+  },
+  {
     name: 'Dashboard',
     url: '/dashboard',
     icon: 'icon-speedometer',
-    badge: {
-      variant: 'info',
-      text: 'NEW'
-    }
+    // badge: {
+    //   variant: 'info',
+    //   text: 'NEW'
+    // }
+    children: [
+      {
+        name: 'Admin Dashboard',
+        url: '/dashboard/admin'
+      },
+      {
+        name: 'Employee Dashboard',
+        url: '/dashboard/employee'
+      },
+    ]
+  },
+  {
+    name: 'App',
+    url: '/app',
+    icon: 'icon-puzzle',
+    children: [
+      {
+        name: 'Axxentis Mail',
+        url: '/app/email'
+      },
+      {
+        name: 'Contacts',
+        url: '/app/contact'
+      },
+      {
+        name: 'File manager',
+        url: '/app/fileManager'
+      },
+      {
+        name: 'Calendar',
+        url: '/app/calendar'
+      },
+    ]
   },
   {
     title: true,
-    name: 'Theme'
+    name: 'Employees'
   },
   {
-    name: 'Colors',
-    url: '/theme/colors',
-    icon: 'icon-drop'
-  },
-  {
-    name: 'Typography',
-    url: '/theme/typography',
-    icon: 'icon-pencil'
-  },
-  {
-    title: true,
-    name: 'Components'
-  },
-  {
-    name: 'Base',
+    name: 'Employees',
     url: '/base',
     icon: 'icon-puzzle',
     children: [
+      {
+        name: 'All Employees',
+        url: 'base/employee',
+        icon: 'icon-people'
+      },
+      {
+        name: 'Department',
+        url: 'base/department',
+        icon: 'icon-puzzle'
+      },
+      {
+        name: 'City',
+        url: 'base/city',
+        icon: 'icon-puzzle'
+      },
+      {
+        name: 'Country',
+        url: 'base/country',
+        icon: 'icon-puzzle'
+      },
+      {
+        name: 'Resumes',
+        url: 'base/resumes',
+        icon: 'icon-puzzle'
+      },
+      {
+        name: 'Images',
+        url: 'base/images',
+        icon: 'icon-puzzle'
+      },
       {
         name: 'Cards',
         url: '/base/cards',
@@ -97,6 +150,33 @@ export const navItems: INavData[] = [
     ]
   },
   {
+    name: 'Activities',
+    url: '/activities',
+    icon: 'icon-cursor',
+    children: [
+      {
+        name: 'Projects',
+        url: 'activities/projects',
+        icon: 'icon-loop'
+      },
+      {
+        name: 'Tasks',
+        url: '/activities/tasks',
+        icon: 'icon-loop'
+      },
+      {
+        name: 'Schedules',
+        url: '/activities/schedules',
+        icon: 'icon-loop'
+      },
+    ]
+  },
+  {
+    name: 'Employee Profiles',
+    url: '/employeeProfiles',
+    icon: 'icon-cursor'
+  },
+  {
     name: 'Buttons',
     url: '/buttons',
     icon: 'icon-cursor',
@@ -132,10 +212,6 @@ export const navItems: INavData[] = [
         name: 'CoreUI Icons',
         url: '/icons/coreui-icons',
         icon: 'icon-star',
-        badge: {
-          variant: 'success',
-          text: 'NEW'
-        }
       },
       {
         name: 'Flags',
@@ -184,10 +260,82 @@ export const navItems: INavData[] = [
     name: 'Widgets',
     url: '/widgets',
     icon: 'icon-calculator',
-    badge: {
-      variant: 'info',
-      text: 'NEW'
-    }
+  },
+  {
+    divider: true
+  },
+  {
+    title: true,
+    name: 'HR',
+  },
+  {
+    name: 'HR performance',
+    url: '/hrPerformance',
+    icon: 'icon-layers',
+    children: [
+      {
+        name: 'Performance Appraisal',
+        url: '/hrPerformance/appraisal',
+        icon: 'icon-loop'
+      },
+    ]
+  },
+  {
+    name: 'Profiles',
+    url: '/profiles',
+    icon: 'icon-loop'
+  },
+  {
+    name: 'Privileges',
+    url: '/privileges',
+    icon: 'icon-loop'
+  },
+  {
+    name: 'Accounting',
+    url: '/accounting',
+    icon: 'icon-loop'
+  },
+  {
+    name: 'Payroll',
+    url: '/payroll',
+    icon: 'icon-tag'
+  },
+  {
+    name: 'Reports',
+    url: 'report',
+    icon: 'icon-loop'
+  },
+  {
+    name: 'Settings',
+    url: 'settings',
+    icon: 'icon-settings'
+  },
+  {
+    divider: true
+  },
+  {
+    title: true,
+    name: 'Performance',
+  },
+  {
+    name: 'Review',
+    url: '/review',
+    icon: 'icon-layers',
+  },
+  {
+    name: 'Promotion',
+    url: '/promotion',
+    icon: 'icon-plus',
+  },
+  {
+    name: 'Resignation',
+    url: '/resignation',
+    icon: 'icon-minus',
+  },
+  {
+    name: 'Termination',
+    url: '/termination',
+    icon: 'icon-trash',
   },
   {
     divider: true
@@ -224,13 +372,36 @@ export const navItems: INavData[] = [
     ]
   },
   {
+    name: 'Extras',
+    url: '/extras',
+    icon: 'icon-star',
+    children: [
+      {
+        name: 'Search',
+        url: '/search',
+        icon: 'icon-star'
+      },
+      {
+        name: 'FAQ',
+        url: '/faq',
+        icon: 'icon-star'
+      },
+      {
+        name: 'Terms',
+        url: '/terms',
+        icon: 'icon-star'
+      },
+      {
+        name: 'Privacy policy',
+        url: '/privacyPolicy',
+        icon: 'icon-star'
+      }
+    ]
+  },
+  {
     name: 'Disabled',
     url: '/dashboard',
     icon: 'icon-ban',
-    badge: {
-      variant: 'secondary',
-      text: 'NEW'
-    },
     attributes: { disabled: true },
   },
 

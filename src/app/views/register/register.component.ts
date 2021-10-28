@@ -28,17 +28,17 @@ export class RegisterComponent implements OnInit {
     const {email, password, gender} = this.registerRequest;
 
     // TODO confirm below method call works
-    this.authService.register(this.registerRequest).subscribe(
-      data => {
-        console.log(data);
-        this.isSuccessful = true;
-        this.isSignUpFailed = false;
-      },
-      err => {
-        this.errorMessage = err.error.message;
-        this.isSignUpFailed = true;
-      }
-    );
+    // this.authService.register(this.registerRequest).subscribe(
+    //   data => {
+    //     console.log(data);
+    //     this.isSuccessful = true;
+    //     this.isSignUpFailed = false;
+    //   },
+    //   err => {
+    //     this.errorMessage = err.error.message;
+    //     this.isSignUpFailed = true;
+    //   }
+    // );
   }
 
   repeatPasswordValid(pass: HTMLInputElement, repeatPass: HTMLInputElement) {
