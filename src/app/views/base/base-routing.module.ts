@@ -13,6 +13,10 @@ import { PopoversComponent } from './popovers.component';
 import { ProgressComponent } from './progress.component';
 import { TooltipsComponent } from './tooltips.component';
 import { NavbarsComponent } from './navbars/navbars.component';
+// import {EmployeeComponent} from './employees/employee.component';
+import {DepartmentComponent} from './department/department.component';
+import {EmployeeComponent} from './employee.component';
+import {TasksComponent} from './tasks.component';
 
 const routes: Routes = [
   {
@@ -37,6 +41,26 @@ const routes: Routes = [
         component: FormsComponent,
         data: {
           title: 'Forms'
+        }
+      },
+      {
+        path: 'employee',
+        component: EmployeeComponent,
+        data: {
+          title: 'All Employees'
+        }
+      },{
+        path: 'tasks',
+        component: TasksComponent,
+        data: {
+          title: 'Tasks'
+        }
+      },
+      {
+        path: 'department',
+        component: DepartmentComponent,
+        data: {
+          title: 'Departments'
         }
       },
       {

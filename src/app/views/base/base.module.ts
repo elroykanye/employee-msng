@@ -47,6 +47,9 @@ import { NavbarsComponent } from './navbars/navbars.component';
 
 // Components Routing
 import { BaseRoutingModule } from './base-routing.module';
+import {EmployeeComponent} from './employee.component';
+import {DepartmentComponent} from './department/department.component';
+import {TasksComponent} from './tasks.component';
 
 @NgModule({
   imports: [
@@ -63,6 +66,9 @@ import { BaseRoutingModule } from './base-routing.module';
     TooltipModule.forRoot()
   ],
   declarations: [
+    EmployeeComponent,
+    DepartmentComponent,
+    TasksComponent,
     CardsComponent,
     FormsComponent,
     SwitchesComponent,

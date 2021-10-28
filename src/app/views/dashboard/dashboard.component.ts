@@ -385,4 +385,109 @@ export class DashboardComponent implements OnInit {
       this.mainChartData3.push(65);
     }
   }
+
+
+  // barChart3
+  public barChart3Data: Array<any> = [
+    {
+      data: [4, 18, 9, 17, 34, 22, 11, 3, 15, 12, 18, 9],
+      label: 'Series A'
+    }
+  ];
+  public barChart3Labels: Array<any> = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  public barChart3Options: any = {
+    tooltips: {
+      enabled: false,
+      custom: CustomTooltips
+    },
+    maintainAspectRatio: false,
+    scales: {
+      xAxes: [{
+        display: false
+      }],
+      yAxes: [{
+        display: false
+      }]
+    },
+    legend: {
+      display: false
+    }
+  };
+  public barChart3Primary: Array<any> = [
+    {
+      backgroundColor: getStyle('--primary'),
+      borderColor: 'transparent',
+      borderWidth: 1
+    }
+  ];
+  public barChart3Danger: Array<any> = [
+    {
+      backgroundColor: getStyle('--danger'),
+      borderColor: 'transparent',
+      borderWidth: 1
+    }
+  ];
+  public barChart3Success: Array<any> = [
+    {
+      backgroundColor: getStyle('--success'),
+      borderColor: 'transparent',
+      borderWidth: 1
+    }
+  ];
+  public barChart3Legend = false;
+  public barChart3Type = 'bar';
+
+
+  // lineChart5
+  public lineChart5Data: Array<any> = [
+    {
+      data: [65, 59, 84, 84, 51, 55, 40],
+      label: 'Series A'
+    }
+  ];
+  public lineChart5Labels: Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  public lineChart5Options: any = {
+    tooltips: {
+      enabled: false,
+      custom: CustomTooltips
+    },
+    maintainAspectRatio: false,
+    scales: {
+      xAxes: [{
+        display: false,
+        points: false,
+      }],
+      yAxes: [{
+        display: false,
+      }]
+    },
+    elements: { point: { radius: 0 } },
+    legend: {
+      display: false
+    }
+  };
+  public lineChart5Info: Array<any> = [
+    {
+      backgroundColor: 'transparent',
+      borderColor: getStyle('--info'),
+      borderWidth: 2
+    }
+  ];
+  public lineChart5Success: Array<any> = [
+    {
+      backgroundColor: 'transparent',
+      borderColor: getStyle('--info'),
+      borderWidth: 2
+    }
+  ];
+  public lineChart5Warning: Array<any> = [
+    {
+      backgroundColor: 'transparent',
+      borderColor: getStyle('--warning'),
+      borderWidth: 2
+    }
+  ];
+  public lineChart5Legend = false;
+  public lineChart5Type = 'line';
 }
+

@@ -19,19 +19,21 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   login(loginRequest: LoginRequest): Observable<any> {
-    return this.http.post(
-      // TODO check to be sure this endpoint is valid
-      AUTH_API + SIGN_IN_ENDPOINT, {
-        loginRequest
-      }, httpOptions
-    );
+    // return this.http.post(
+    //   // TODO check to be sure this endpoint is valid
+    //   AUTH_API + SIGN_IN_ENDPOINT, {
+    //     loginRequest
+    //   }, httpOptions
+    // );
+    return null;
   }
 
   register(registerRequest: RegisterRequest): Observable<any> {
-    return this.http.post(
-      AUTH_API + SIGN_UP_ENDPOINT, {
-        registerRequest
-      }, httpOptions
-    );
+    return null;
+    // this.http.post(
+    //   AUTH_API + SIGN_UP_ENDPOINT, {
+    //     registerRequest
+    //   }, httpOptions
+    // );
   }
 }
